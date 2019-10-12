@@ -1,0 +1,14 @@
+bin/
+gen/
+local.properties
+build/
+.idea/
+.gradle
+*.iml
+.DS_Store
+captures/
+.directory
+
+# Ignore release keys.
+*.jks
+*.keystore
