@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/item_rate_padding"
+    tools:ignore="ContentDescription">
+
+    <ImageView
+        android:id="@+id/icCurrencyFlag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/lblCurrencySymbol"
+        android:layout_alignBottom="@id/lblCurrencyName"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/flag"/>
+
+    <TextView
+        android:id="@+id/lblCurrencySymbol"
+        style="@style/AppTheme.TextCurrencySymbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/icCurrencyFlag"
+        tools:text="EUR"/>
+
+    <TextView
+        android:id="@+id/lblCurrencyName"
+        style="@style/AppTheme.TextCurrencyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblCurrencySymbol"
+        android:layout_toEndOf="@id/icCurrencyFlag"
+        tools:text="Euro"/>
+
+    <EditText
+        android:id="@+id/txtCurrencyAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:inputType="numberDecimal"
+        tools:text="1.00"/>
+
+</RelativeLayout>
