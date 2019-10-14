@@ -1,5 +1,6 @@
 package com.lethalskillzz.converter.data.interactor
 
+import com.lethalskillzz.converter.data.model.RateList
 import com.lethalskillzz.converter.data.service.RatesService
 import io.reactivex.Single
 import javax.inject.Inject
