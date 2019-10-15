@@ -5,6 +5,7 @@ import com.lethalskillzz.converter.core.App
 import com.lethalskillzz.converter.di.builders.ActivityBuilder
 import com.lethalskillzz.converter.di.modules.AppModule
 import com.lethalskillzz.converter.di.modules.RepositoryModule
+import com.lethalskillzz.converter.di.modules.RestModule
 import com.lethalskillzz.converter.di.modules.ViewModelModule
 import dagger.BindsInstance
 import dagger.Component
@@ -17,7 +18,8 @@ import javax.inject.Singleton
       AppModule::class,
       ActivityBuilder::class,
       ViewModelModule::class,
-      RepositoryModule::class]
+      RepositoryModule::class,
+      RestModule::class]
 )
 interface AppComponent {
 
