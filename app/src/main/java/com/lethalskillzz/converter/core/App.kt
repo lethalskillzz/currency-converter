@@ -5,6 +5,7 @@ import android.content.Context
 import androidx.multidex.MultiDexApplication
 import com.lethalskillzz.converter.BuildConfig
 import com.lethalskillzz.converter.R
+import com.lethalskillzz.converter.di.components.DaggerAppComponent
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy

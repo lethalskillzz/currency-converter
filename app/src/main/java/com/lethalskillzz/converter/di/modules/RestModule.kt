@@ -10,7 +10,6 @@ import javax.inject.Singleton
 
 @Module
 class RestModule {
-
   @Singleton
   @Provides
   internal fun providesRatesService(): RatesService {

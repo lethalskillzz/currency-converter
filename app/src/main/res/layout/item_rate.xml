@@ -14,7 +14,7 @@
         android:layout_alignTop="@id/textViewCurrencySymbol"
         android:layout_alignBottom="@id/textViewCurrencyName"
         android:layout_marginEnd="10dp"
-        android:src="@drawable/flag"/>
+        />
 
     <TextView
         android:id="@+id/textViewCurrencySymbol"

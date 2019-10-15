@@ -1,7 +1,7 @@
 package com.lethalskillzz.converter.core.base.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.lethalskillzz.android.core.SingleLiveEvent
+import com.lethalskillzz.converter.core.SingleLiveEvent
 import io.reactivex.disposables.CompositeDisposable
 
 abstract class AppViewModel : ViewModel() {
