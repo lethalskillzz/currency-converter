@@ -1,6 +1,6 @@
 package com.lethalskillzz.converter.di.modules
 
-import com.lethalskillzz.converter.data.service.RatesService
+import com.lethalskillzz.converter.data.service.CurrencyService
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -12,11 +12,11 @@ import javax.inject.Singleton
 class RestModule {
   @Singleton
   @Provides
-  internal fun providesRatesService(): RatesService {
+  internal fun providesRatesService(): CurrencyService {
     return Retrofit.Builder()
-        .baseUrl(RatesService.BASE_URL)
+        .baseUrl(CurrencyService.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .build().create(RatesService::class.java)
+        .build().create(CurrencyService::class.java)
   }
 }

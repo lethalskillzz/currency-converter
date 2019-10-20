@@ -23,7 +23,7 @@
     <!-- Text main screen title. -->
     <style name="AppTheme.TextTitle">
         <item name="android:fontFamily">sans-serif</item>
-        <item name="android:textStyle">normal</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textSize">22sp</item>
         <item name="android:lineSpacingExtra">6sp</item>
         <item name="android:singleLine">true</item>
