@@ -10,6 +10,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
         style="@style/AppTheme.Content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,13 +27,13 @@
             android:layout_marginStart="@dimen/view_margin_left"
             android:layout_marginTop="@dimen/view_margin_top"
             android:layout_marginEnd="@dimen/view_margin_right"
-            android:gravity="center_horizontal"
+            android:gravity="left"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewRates"
+            android:id="@+id/recyclerViewCurrency"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
