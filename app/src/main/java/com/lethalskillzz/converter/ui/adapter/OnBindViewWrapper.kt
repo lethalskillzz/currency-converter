@@ -5,6 +5,6 @@ import com.lethalskillzz.converter.data.model.Currency
 data class OnBindViewWrapper(
   val adapter: CurrencyAdapter,
   val currency: Currency,
-  val symbolPosition: ArrayList<String>,
+  val currencyPositions: ArrayList<String>,
   val amount: Float
 )

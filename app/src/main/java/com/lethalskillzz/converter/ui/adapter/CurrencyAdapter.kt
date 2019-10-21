@@ -10,31 +10,31 @@ import kotlin.collections.ArrayList
 
 class CurrencyAdapter(private val onBaseChangedListener: OnBaseChangedListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-  private val symbolPosition = ArrayList<String>()
-  private val symbolRate = HashMap<String, Currency>()
+  private val currencyPositions = ArrayList<String>()
+  private val currencySymbol = HashMap<String, Currency>()
 
   private var amount = 1.0F
 
   fun updateRates(rates: ArrayList<Currency>) {
-    if (symbolPosition.isEmpty()) {
-      symbolPosition.addAll(rates.map { it.symbol })
+    if (currencyPositions.isEmpty()) {
+      currencyPositions.addAll(rates.map { it.symbol })
     }
 
     for (rate in rates) {
-      symbolRate[rate.symbol] = rate
+      currencySymbol[rate.symbol] = rate
     }
 
-    notifyItemRangeChanged(0, symbolPosition.size - 1, amount)
+    notifyItemRangeChanged(0, currencyPositions.size - 1, amount)
   }
 
   fun updateAmount(amount: Float) {
     this.amount = amount
 
-    notifyItemRangeChanged(0, symbolPosition.size - 1, amount)
+    notifyItemRangeChanged(0, currencyPositions.size - 1, amount)
   }
 
   private fun currencyAtPosition(pos: Int): Currency {
-    return symbolRate[symbolPosition[pos]]!!
+    return currencySymbol[currencyPositions[pos]]!!
   }
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -44,10 +44,10 @@ class CurrencyAdapter(private val onBaseChangedListener: OnBaseChangedListener) 
   }
 
   override fun getItemCount(): Int {
-    return symbolPosition.size
+    return currencyPositions.size
   }
 
   override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-    (holder as CurrencyViewHolder).bind(OnBindViewWrapper(this, currencyAtPosition(position), symbolPosition, amount))
+    (holder as CurrencyViewHolder).bind(OnBindViewWrapper(this, currencyAtPosition(position), currencyPositions, amount))
   }
 }
