@@ -8,4 +8,45 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Take off ActionBar. -->
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Content. -->
+    <style name="AppTheme.Content">
+        <item name="android:background">@color/colorContentBackground</item>
+        <item name="android:elevation">2dp</item>
+    </style>
+
+    <!-- Text main screen title. -->
+    <style name="AppTheme.TextTitle">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- Text currency symbol. -->
+    <style name="AppTheme.TextCurrencySymbol">
+        <item name="android:fontFamily">sans-serif-semibold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">7sp</item>
+        <item name="android:textColor">@color/colorTextBlack</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- Text currency name. -->
+    <style name="AppTheme.TextCurrencyName">
+        <item name="android:fontFamily">open-sans</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:lineSpacingExtra">7sp</item>
+        <item name="android:textColor">@color/colorTextGrey</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
 </resources>
