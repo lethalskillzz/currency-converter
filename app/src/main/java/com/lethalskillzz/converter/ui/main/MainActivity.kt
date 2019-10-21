@@ -33,7 +33,6 @@ class MainActivity : AppActivity<MainViewModel, ActivityMainBinding>() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-
     adapter = CurrencyAdapter(object : OnBaseChangedListener {
       override fun onAmountChanged(symbol: String, amount: Float) {
         viewModel.getRates(symbol, amount)
@@ -43,13 +42,14 @@ class MainActivity : AppActivity<MainViewModel, ActivityMainBinding>() {
     setupView()
 
     setupViewModel()
+
+    viewModel.getRates(DEFAULT_BASE, DEFAULT_AMOUNT)
   }
 
   private fun setupView() {
     textViewTitle.text = getText(R.string.title_main)
     recyclerViewCurrency.setHasFixedSize(true)
     recyclerViewCurrency.layoutManager = LinearLayoutManager(getContext())
-    recyclerViewCurrency.adapter = adapter
   }
 
   private fun setupViewModel() {
@@ -63,14 +63,13 @@ class MainActivity : AppActivity<MainViewModel, ActivityMainBinding>() {
         Snackbar.make(root, response.errorMessage.text, Snackbar.LENGTH_LONG).show()
       } else {
         adapter.updateRates(requireNotNull(response.currencies))
+        recyclerViewCurrency.adapter = adapter
       }
     })
 
     viewModel.amountLiveData.observe(getActivity(), Observer {
       adapter.updateAmount(requireNotNull(viewModel.amountLiveData.value))
     })
-
-    viewModel.getRates(DEFAULT_BASE, DEFAULT_AMOUNT)
   }
 
   companion object {

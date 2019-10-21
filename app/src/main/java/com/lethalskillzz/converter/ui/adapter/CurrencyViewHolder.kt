@@ -23,7 +23,7 @@ class CurrencyViewHolder(itemView: View, private val onBaseChangedListener: OnBa
 
   fun bind(onBindView: OnBindViewWrapper) {
     if (symbol != onBindView.currency.symbol) {
-      setupViewHolder(onBindView.adapter, onBindView.currency, onBindView.symbolPosition)
+      setupViewHolder(onBindView.adapter, onBindView.currency, onBindView.currencyPositions)
       this.symbol = onBindView.currency.symbol
     }
 
@@ -32,7 +32,7 @@ class CurrencyViewHolder(itemView: View, private val onBaseChangedListener: OnBa
     }
   }
 
-  private fun setupViewHolder(adapter: CurrencyAdapter, currency: Currency, symbolPosition: ArrayList<String>) {
+  private fun setupViewHolder(adapter: CurrencyAdapter, currency: Currency, currencyPositions: ArrayList<String>) {
     val symbol = currency.symbol.toLowerCase()
     val nameId = getCurrencyNameResId(itemView.context, symbol)
     val flagId = getCurrencyFlagResId(itemView.context, symbol)
@@ -46,8 +46,8 @@ class CurrencyViewHolder(itemView: View, private val onBaseChangedListener: OnBa
         return@OnFocusChangeListener
       }
       layoutPosition.takeIf { it > 0 }?.also { currentPosition ->
-        symbolPosition.removeAt(currentPosition).also {
-          symbolPosition.add(0, it)
+        currencyPositions.removeAt(currentPosition).also {
+          currencyPositions.add(0, it)
         }
         adapter.notifyItemMoved(currentPosition, 0)
       }
